@@ -23,7 +23,7 @@ class CreateGallery {
 
 
 
-    createGallery(){
+    createGallery(Description, Image_url){
         this.Title.type(this.Title)
         this.Description.type(Description)
         this.Image_url.type(Image_url)

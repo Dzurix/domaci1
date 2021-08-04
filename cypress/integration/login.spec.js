@@ -1,23 +1,22 @@
 /// <reference types="Cypress" />
 
+const locators = require("../fixtures/Locators.json")
+
+
 describe('login case', () => {
 
-    it('visit gallerz app', () =>{
+    beforeEach(() => {
 
-        cy.visit("")
+        cy.visit("/")
+        cy.get(locators.Header.Login).click()
     })
 
-    it('click on login button', () => {
-        
-     
-        cy.get('a[href="/login"]').click()
-      
-    })
+
 
     it ('login with valid credentials', () => {
-    cy.get('input[id="email"]').type('dekitest@gmail.com')
-    cy.get('input[id="password"]').type('12345678')
-    cy.get('button[type="submit"]').click()
+    cy.get(locators.Login.Email).type('dekitest@gmail.com')
+    cy.get(locators.Login.Password).type('12345678')
+    cy.get(locators.Login.Submit).click()
 
 
    })
